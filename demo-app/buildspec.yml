@@ -3,16 +3,19 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo "Navigating to the demo-app directory..."
-      - cd demo-app  # Navigate to the directory containing package.json
-      - echo "Installing dependencies..."
-      - npm install  # Install dependencies in the demo-app directory
+      - pwd # Ensure you're in the right directory
+      - ls # List the files to check where you are
+      - rm -rf node_modules
+      - npm cache clean --force
+      - npm install
+      - npm list # Check installed dependencies
   build:
     commands:
-      - echo "Building the React app..."
-      - npm run build  # Run the build command inside the demo-app directory
+      - pwd # Ensure you're still in the correct directory
+      - ls # List files again to verify build context
+      - npm run build # Run the build command
 
 artifacts:
   files:
-    - '**/*'  # Include all files in the build output
-  base-directory: build  # Artifacts where npm run build places the production files
+    - "**/*"
+  base-directory: build # Assuming the build output goes here
