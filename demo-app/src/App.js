@@ -10,7 +10,7 @@ function App() {
           Congratulations on successfully deploying a React app on your AWS EC2
           instance!
         </h3>
-        <p>This is v1.7</p>
+        <p>This is v1.8</p>
       </header>
     </div>
   );
