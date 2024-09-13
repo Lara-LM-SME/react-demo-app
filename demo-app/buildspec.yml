@@ -5,22 +5,16 @@ phases:
     runtime-versions:
       nodejs: 20
     commands:
-      - pwd # Ensure you're in the right directory
-      - ls # List the files to check where you are
-      - rm -rf node_modules
-      - npm cache clean --force
-      - npm install
-      - npm list # Check installed dependencies
+      - echo "Navigating to the demo-app directory for install..."
+      - cd demo-app # Navigate to the demo-app directory
+      - npm install # Install dependencies in the correct directory
   build:
     commands:
-      - pwd # Ensure you're still in the correct directory
-      - ls # List files again to verify build context
-      - cd demo-app
-      - pwd
-      - ls
+      - echo "Building the React app..."
+      - cd demo-app # Ensure you are in the correct directory
       - npm run build # Run the build command
 
 artifacts:
   files:
     - "**/*"
-  base-directory: build # Assuming the build output goes here
+  base-directory: demo-app/build # Assuming the build output goes here
