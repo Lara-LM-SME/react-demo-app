@@ -5,10 +5,6 @@ files:
     destination: /home/ec2-user/app/react-app-demo/demo-app/build # Where the build files will be copied on the EC2 instance
 
 hooks:
-  ApplicationStop:
-    - location: deploy.sh
-      timeout: 300
-      runas: ec2-user
   AfterInstall:
     - location: deploy.sh
       timeout: 300
