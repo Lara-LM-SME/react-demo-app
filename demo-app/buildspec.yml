@@ -11,7 +11,8 @@ phases:
   build:
     commands:
       - echo "Building the React app..."
-      - cd demo-app # Ensure you are in the correct directory
+      - pwd
+      - ls # Ensure you are in the correct directory
       - npm run build # Run the build command
 
 artifacts:
